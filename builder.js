@@ -24,6 +24,15 @@ export default class {
      */
     getHtml() {
         return `
+        ${this.getNav()}
+        ${this.getDisplay()}
+        ${this.getFooter()}
+        ${this.getMessage()}
+        `;
+    }
+
+    getNav(){
+        return `
         <nav
             id="app__nav"
             class="app__nav"
@@ -42,9 +51,19 @@ export default class {
             </ul>
             </div>
         </nav>
+        `;
+    }
+
+    getDisplay(){
+        return `
         <div id="app__display">
             <!-- All views will be loaded here -->
         </div>
+        `;
+    }
+
+    getFooter(){
+        return `
         <footer id="app__footer" class="app__footer" role="contentinfo">
             <div class="footer__container">
             <div class="footer__content">
@@ -108,9 +127,15 @@ export default class {
             <p>&copy; 2024 Bookly. All rights reserved.</p>
             </div>
         </footer>
+        `;
+    }
+
+    getMessage(){
+        return `
         <div id="app__message" class="app__message info" role="alert" aria-live="polite">
             HOME
         </div>
         `;
     }
+
 }
