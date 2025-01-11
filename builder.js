@@ -79,7 +79,7 @@ export default class {
 
     getSignupModal() {
         return `
-        <div id="signup-modal" class="app__signup-modal open" role="dialog" aria-labelledby="signup-title">
+        <div id="signup-modal" class="app__signup-modal" role="dialog" aria-labelledby="signup-title" data-auth-signup>
             
         </div>
         `;
