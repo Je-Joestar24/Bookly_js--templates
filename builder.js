@@ -29,10 +29,11 @@ export default class {
         ${this.getFooter()}
         ${this.getMessage()}
         ${this.getLoginModal()}
+        ${this.getSignupModal()}
         `;
     }
 
-    getNav(){
+    getNav() {
         return `
         <nav
             id="app__nav"
@@ -44,7 +45,7 @@ export default class {
         `;
     }
 
-    getDisplay(){
+    getDisplay() {
         return `
         <div id="app__display">
             <!-- All views will be loaded here -->
@@ -52,7 +53,7 @@ export default class {
         `;
     }
 
-    getFooter(){
+    getFooter() {
         return `
         <footer id="app__footer" class="app__footer" role="contentinfo">
 
@@ -60,17 +61,25 @@ export default class {
         `;
     }
 
-    getMessage(){
+    getMessage() {
         return `
         <div id="app__message" class="app__message info" role="alert" aria-live="polite">
         
         </div>
         `;
     }
-    
-    getLoginModal(){
+
+    getLoginModal() {
         return `
         <div id="login-modal" class="app__login-modal" role="dialog" aria-labelledby="login-title" data-auth-login>
+        
+        </div>
+        `
+    }
+
+    getSignupModal() {
+        return `
+        <div id="signup-modal" class="app__signup-modal open" role="dialog" aria-labelledby="signup-title">
             
         </div>
         `;
