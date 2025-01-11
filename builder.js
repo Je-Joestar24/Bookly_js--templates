@@ -28,6 +28,7 @@ export default class {
         ${this.getDisplay()}
         ${this.getFooter()}
         ${this.getMessage()}
+        ${this.getSignupModal()}
         `;
     }
 
@@ -63,6 +64,14 @@ export default class {
         return `
         <div id="app__message" class="app__message info" role="alert" aria-live="polite">
         
+        </div>
+        `;
+    }
+    
+    getSignupModal(){
+        return `
+        <div id="signup-modal" class="app__signup-modal open" role="dialog" aria-labelledby="signup-title">
+            
         </div>
         `;
     }
