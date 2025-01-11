@@ -10,15 +10,15 @@ export default class {
                 <li>
                     <a id="about-nav" href="#/about" class="nav__link">About</a>
                 </li>
+                <li class="nav__auth">
+                    <button class="btn btn--secondary" aria-label="Log in to your account" data-auth-login>
+                        Login
+                    </button>
+                    <button class="btn btn--primary" aria-label="Create new account" data-auth-signup>
+                        Sign Up
+                    </button>
+                </li>
             </ul>
-            <div class="nav__auth">
-                <button class="btn btn--secondary" aria-label="Log in to your account" data-auth-login>
-                    Login
-                </button>
-                <button class="btn btn--primary" aria-label="Create new account" data-auth-signup>
-                    Sign Up
-                </button>
-            </div>
         </nav>
         `
     }
