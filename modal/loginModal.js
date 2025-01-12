@@ -8,6 +8,8 @@
 import AbstractModal from "./AbstractModal.js";
 import HtmlGenerator from "./loginModal/htmlGenerator.js";
 
+import AuthsHandler from "./loginModal/authsHandler.js";
+
 export default class LoginModal extends AbstractModal {
     /**
      * Initialize the login modal with required configuration
@@ -16,6 +18,7 @@ export default class LoginModal extends AbstractModal {
     constructor() {
         super({ modal: 'login-modal', toggledata: 'data-auth-login', activeclass: 'open' });
         this.htmlGen = new HtmlGenerator();
+        this.authsH = new AuthsHandler();
         this.init();
     }
 
@@ -26,5 +29,6 @@ export default class LoginModal extends AbstractModal {
     async init() {
         this.modal.innerHTML = await this.htmlGen.getHtml();
         this.bindButtons();
+        this.authsH.bindAuths(this.modal);
     }
 }

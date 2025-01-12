@@ -13,7 +13,7 @@ export default class {
             <div class="login-modal__contents">
                 <button class="login-modal__close" aria-label="Close login modal" data-auth-login>×</button>
                 <h2 id="login-title" class="login-modal__title">Welcome Back</h2>
-                <form class="login-modal__form" role="form" aria-label="Login form">
+                <form class="login-modal__form" role="form" aria-label="Login form" data-login-form>
                     <div class="form-group">
                         <label for="login-email">Email</label>
                         <input 
