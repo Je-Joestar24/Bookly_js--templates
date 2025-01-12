@@ -37,22 +37,22 @@ export default class {
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            actions.displayMessage("INVALID EMAIL ADDRESS", 750);
+            actions.displayMessage("INVALID EMAIL ADDRESS", 750, 'warning');
             return;
         }
 
         // Password confirmation
         if (password !== cpass) {
-            actions.displayMessage("PASSWORD DOESN'T MATCH", 750);
+            actions.displayMessage("PASSWORD DOESN'T MATCH", 750, 'warning');
             return;
         }
 
         // Create account and login
         const signup = await actions.signup({ email, password });
         if(signup){
-             actions.displayMessage('ACCOUNT CREATED SUCCESSFULLY', 750);
+             actions.displayMessage('ACCOUNT CREATED SUCCESSFULLY', 750, 'success');
              setTimeout(() => this.logger.login(email, password), 500)
         }
-        else actions.displayMessage('Account Already Exists!! Please Try Again'.toUpperCase(), 750)
+        else actions.displayMessage('Account Already Exists!! Please Try Again'.toUpperCase(), 750, 'error')
     }
 }

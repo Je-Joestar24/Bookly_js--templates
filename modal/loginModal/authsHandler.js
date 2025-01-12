@@ -39,13 +39,13 @@ export default class {
     async login(email, password) {
         const res = await actions.login({ email, password });
         if (res.success) {
-            await actions.displayMessage("LOGGING IN...", 500);
+            await actions.displayMessage("LOGGING IN...", 500, 'success');
             setTimeout(() => {
                 window.location.href = window.location.origin + "#/books";
                 location.reload()
             }, 1000);
         } else {
-            actions.displayMessage("LOGIN FAILED, NO MATCH FOUND!", 750);
+            actions.displayMessage("LOGIN FAILED, NO MATCH FOUND!", 750, 'error');
         }
     }
 }
