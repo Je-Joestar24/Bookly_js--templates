@@ -14,7 +14,7 @@ export default class{
             <div class="signup-modal__contents">
                 <button class="signup-modal__close" aria-label="Close signup modal" data-auth-signup>×</button>
                 <h2 id="signup-title" class="signup-modal__title">Create Account</h2>
-                <form class="signup-modal__form" role="form" aria-label="Signup form">
+                <form class="signup-modal__form" role="form" aria-label="Signup form" data-signup-form>
                     <div class="form-group">
                         <label for="signup-email">Email</label>
                         <input 

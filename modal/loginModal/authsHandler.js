@@ -26,7 +26,7 @@ export default class {
     async loginNow(modal) {
         const email = modal.querySelector("#login-email").value.trim();
         const password = modal.querySelector("#login-password").value;
-        await this.login(email, password, modal);
+        await this.login(email, password);
     }
 
     /**
@@ -36,12 +36,14 @@ export default class {
      * @param {string} password - User password
      * @param {HTMLElement} modal - The modal container element
      */
-    async login(email, password, modal) {
+    async login(email, password) {
         const res = await actions.login({ email, password });
         if (res.success) {
-            window.location.href = window.location.origin + "#/books";
             await actions.displayMessage("LOGGING IN...", 500);
-            setTimeout(() => location.reload(), 500);
+            setTimeout(() => {
+                window.location.href = window.location.origin + "#/books";
+                location.reload()
+            }, 1000);
         } else {
             actions.displayMessage("LOGIN FAILED, NO MATCH FOUND!", 750);
         }

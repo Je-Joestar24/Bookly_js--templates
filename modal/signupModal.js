@@ -7,6 +7,7 @@ import HtmlGenerator from "./signupModal/htmlGenerator.js";
  * @extends AbstractModal
  */
 import AbstractModal from "./AbstractModal.js";
+import AuthsHandler from "./signupModal/authsHandler.js";
 
 export default class SignupModal extends AbstractModal {
     /**
@@ -16,6 +17,7 @@ export default class SignupModal extends AbstractModal {
     constructor() {
         super({ modal: 'signup-modal', toggledata: 'data-auth-signup', activeclass: 'open' });
         this.hGen = new HtmlGenerator();
+        this.authsH = new AuthsHandler
     }
 
     /**
@@ -25,6 +27,7 @@ export default class SignupModal extends AbstractModal {
     async init() {
         this.modal.innerHTML = await this.hGen.getHtml();
         this.bindButtons();
+        this.authsH.bindAuths(this.modal);
     }
 
 }
